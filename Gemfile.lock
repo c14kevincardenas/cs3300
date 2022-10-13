@@ -224,7 +224,7 @@ DEPENDENCIES
   debug
   importmap-rails
   jbuilder
-  pg
+  pg (~> 0.21)
   puma (~> 5.0)
   rails (~> 7.0.4)
   rails_12factor
