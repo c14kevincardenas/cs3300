@@ -219,7 +219,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  bootsnap
+  bootsnap (>= 1.6.0)
   capybara
   debug
   importmap-rails
