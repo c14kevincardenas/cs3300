@@ -103,6 +103,7 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     libv8-node (16.10.0.0)
+    libv8-node (16.10.0.0-x86_64-linux)
     loofah (2.19.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -128,6 +129,8 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.9)
       mini_portile2 (~> 2.8.0)
+      racc (~> 1.4)
+    nokogiri (1.13.9-x86_64-linux)
       racc (~> 1.4)
     pg (1.4.4)
     public_suffix (5.0.0)
@@ -205,6 +208,7 @@ GEM
       sprockets (>= 3.0.0)
     sqlite3 (1.5.3)
       mini_portile2 (~> 2.8.0)
+    sqlite3 (1.5.3-x86_64-linux)
     stimulus-rails (1.1.0)
       railties (>= 6.0.0)
     thor (1.2.1)
@@ -234,6 +238,7 @@ GEM
 
 PLATFORMS
   ruby
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap (>= 1.6.0)
