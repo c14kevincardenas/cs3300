@@ -4,14 +4,23 @@ ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
-require 'rspec/rails'
+
 # Add additional requires below this line. Rails is not loaded until this point!
+require 'rspec/rails'
 require 'simplecov'
 SimpleCov.start 'rails' do
   add_filter '/bin/'
   add_filter '/db/'
   add_filter '/spec/' # for rspec
+  add_filter '/app/mailers/application_mailer.rb'
+  add_filter '/app/channels/application_cable/channel.rb'
+  add_filter '/app/channels/application_cable/connection.rb'
+  add_filter '/app/jobs/application_job.rb'
 end
+require 'devise'
+require 'factory_bot_rails'
+require 'support/controller_macros'
+
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
 # run as spec files by default. This means that files in spec/support that end
@@ -35,6 +44,13 @@ rescue ActiveRecord::PendingMigrationError => e
   abort e.to_s.strip
 end
 RSpec.configure do |config|
+  # KEVIN ADDED!! - Devise controller tests
+  # config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers, :type => :controller
+  config.include Devise::Test::IntegrationHelpers, :type => :feature
+  config.extend ControllerMacros, :type => :controller
+  # config.extend ControllerMacros, type: :feature
+
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
