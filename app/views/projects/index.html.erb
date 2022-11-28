@@ -1,29 +1,38 @@
 <p style="color: green"><%= notice %></p>
 
+<div class="container-fluid p-5 bg-primary text-white text-center">
+  <h1>Kevin Cardenas</h1>
+  <p>Here is a portfolio containing some of my best projects!</p> 
+</div>
+
+<div class="container mt-5">
+  <div class="row">
+    <% @projects.each do |project| %>
+      <div class="col-sm-4">
+        <%= render project %>
+        <p>
+          <% if user_signed_in? %> 
+            <%= link_to "Show this project", project %>
+          <% end %>
+        </p>
+      </div>
+    <% end %>
+  </div>
+</div>
+
 <!--
-<% if user_signed_in? %> 
-  <div> Welcome <%= current_user.email %> </div> 
-  <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
-<% else %>
-  <%= button_to "Sign in", new_user_session_path %> 
-<% end %>
--->
-
-<h1>Projects</h1>
-
 <div id="projects">
   <% @projects.each do |project| %>
     <%= render project %>
     <p>
-      <%= link_to "Show this project", project %>
+      <% if user_signed_in? %> 
+        <%= link_to "Show this project", project %>
+      <% end %>
     </p>
   <% end %>
 </div>
+-->
 
-<%= link_to "New project", new_project_path %>
-
-<!--
 <% if user_signed_in? %>
   <%= link_to "New project", new_project_path %>
 <% end %>
--->

@@ -1,6 +1,11 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @project %>
+<div class="container-fluid p-5 bg-primary text-white text-center">
+  <h1><%= @project.title %></h1>
+</div>
+
+<%= @project.description %>
+
 
 <div>
   <%= link_to "Edit this project", edit_project_path(@project) %> |
