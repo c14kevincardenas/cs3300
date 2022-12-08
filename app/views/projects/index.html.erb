@@ -11,9 +11,7 @@
       <div class="col-sm-4">
         <%= render project %>
         <p>
-          <% if user_signed_in? %> 
-            <%= link_to "Show this project", project %>
-          <% end %>
+          <%= link_to "Show this project", project %>
         </p>
       </div>
     <% end %>
