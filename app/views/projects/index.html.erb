@@ -8,8 +8,8 @@
 <div class="container mt-5">
   <div class="row">
     <% @projects.each do |project| %>
-      <div class="col-sm-4">
-        <%= render project %>
+      <div class="col-sm-6">
+        <%= auto_link(project.description) %>
         <p>
           <%= link_to "Show this project", project %>
         </p>
